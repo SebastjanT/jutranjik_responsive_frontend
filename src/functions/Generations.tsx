@@ -100,14 +100,14 @@ function insightMutations(displayMutations: boolean, handleChange: any, handleSu
           aria-controls="requestgeneration-content"
           id="requestgeneration-header"
         >
-          <Typography>Request a manual generation</Typography>
+          <Typography>Zahtevaj ročno generacijo</Typography>
         </AccordionSummary>
         <AccordionDetails>
           <form noValidate autoComplete="off">
             <Grid container spacing={1} alignItems="center">
               <Grid item xs={12} sm='auto'>
                 <FormControl component="fieldset">
-                  <FormLabel component="legend">Generator</FormLabel>
+                  <FormLabel component="legend">Generator:</FormLabel>
                   <RadioGroup aria-label="generator" name="generator" value={formData.generator} onChange={handleChange}>
                     <FormControlLabel value="Maizzle" control={<Radio />} label="Maizzle" />
                     <FormControlLabel value="mjml" control={<Radio />} label="mjml" />
@@ -116,17 +116,17 @@ function insightMutations(displayMutations: boolean, handleChange: any, handleSu
               </Grid>
               <Grid item xs={12} sm='auto'>
                 <FormControl component="fieldset">
-                  <FormLabel component="legend">Send the email</FormLabel>
+                  <FormLabel component="legend">Distribucija:</FormLabel>
                   <FormGroup>
                     <FormControlLabel
                       control={<Checkbox onChange={handleChange} name="send" id="send" />}
-                      label="Send the email!"
+                      label="Pošlji generirano"
                     />
                   </FormGroup>
                 </FormControl>
               </Grid>
               <Grid item>
-                <Button color="inherit" onClick={handleSubmit} type="submit" variant="outlined">Request</Button>
+                <Button color="inherit" onClick={handleSubmit} type="submit" variant="outlined">Pošlji zahtevek</Button>
               </Grid>
             </Grid>
           </form>
@@ -213,7 +213,7 @@ function Generations() {
   if (queryError) return (messagePaper(`Error: ${queryError.message}`, classes, 'error'));
 
   //  Insight mode mutation
-  const displayMutations = data.generations[0].generationTimeEnd ? true : false;
+  const displayMutations = data?.generations[0]?.generationTimeEnd ? true : false;
 
   //  Operation user messages logic
   let message;
