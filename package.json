@@ -1,6 +1,6 @@
 {
   "name": "jutranjik_responsive_frontend",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "@apollo/client": "^3.4.8",
