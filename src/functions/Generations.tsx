@@ -79,7 +79,7 @@ function insightMode(generation: Generation) {
   return (
     <div>
       <p><strong>Generator:</strong> {generation.usedGenerator}</p>
-      <p><strong>Velikost:</strong> {(generation.fileSize)*1024*1024*1024} MiB</p>
+      <p><strong>Velikost:</strong> {(generation.fileSize)} B</p>
       <p><strong>Število vrstic (optimizirano):</strong> {generation.lineCountAfter} (od tega odstranjeno: {(generation.lineCountBefore)-(generation.lineCountAfter)})</p>
       <p><strong>Čas generacije:</strong> {secondsSpent}</p>
       <p><strong>Vključena besedilna verzija:</strong> {generation.hasText ? "Da" : "Ne"}</p>
