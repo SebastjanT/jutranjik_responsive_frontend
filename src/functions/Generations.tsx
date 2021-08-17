@@ -54,11 +54,6 @@ const useStyles = makeStyles((theme) => ({
     marginTop: '1rem',
     padding: '1rem',
   },
-  paperJutranjikDate: {
-    padding: '0.2rem',
-    backgroundColor: '#9CA3AF',
-    borderRadius: '0px',
-  },
 }));
 
 //  Paper object to show messages about generations operations to the user
@@ -72,7 +67,7 @@ function formatDate(generationTimeStart: Date) {
   return date.getDay()+'. '+(date.getMonth()+1)+'. '+date.getFullYear();
 }
 
-//  Process and return the display for the generation performance data
+//  Process and returns the display for the generation performance data
 function insightMode(generation: Generation) {
   if (generation.generationTimeEnd === null){
     return;
@@ -218,7 +213,7 @@ function Generations() {
   if (queryError) return (messagePaper(`Error: ${queryError.message}`, classes, 'error'));
 
   //  Insight mode mutation
-  const displayMutations = data.generations[0].generationTimeEnd ? true : true;
+  const displayMutations = data.generations[0].generationTimeEnd ? true : false;
 
   //  Operation user messages logic
   let message;
