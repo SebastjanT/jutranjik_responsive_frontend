@@ -64,7 +64,7 @@ function messagePaper(message: string, classes: ClassNameMap, color: any) {
 //  Formats the date to the dd-MM-YY format
 function formatDate(generationTimeStart: Date) {
   const date = new Date(generationTimeStart);
-  return date.getDay()+'. '+(date.getMonth()+1)+'. '+date.getFullYear();
+  return date.getDate()+'. '+(date.getMonth()+1)+'. '+date.getFullYear();
 }
 
 //  Process and returns the display for the generation performance data
